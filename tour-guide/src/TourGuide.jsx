@@ -504,8 +504,8 @@ export default function TourGuide() {
             <div key={i} style={{ marginBottom: i < city.venues.length - 1 ? "20px" : 0 }}>
               <div style={{ fontWeight: 600, color: "#e8e0d8", fontSize: "15px", marginBottom: "8px" }}>{v.name}</div>
               {v.image && (
-                <div style={{ marginBottom: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
-                  <img src={v.image} alt={v.imageCaption} style={{ width: "100%", display: "block" }} />
+                <div style={{ marginBottom: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)", textAlign: "center", background: "rgba(255,255,255,0.02)" }}>
+                  <img src={v.image} alt={v.imageCaption} style={{ maxWidth: "100%", maxHeight: "300px", display: "block", margin: "0 auto" }} />
                   <div style={{ fontSize: "11px", color: "#777", padding: "8px 12px", background: "rgba(255,255,255,0.03)" }}>{v.imageCaption}</div>
                 </div>
               )}
