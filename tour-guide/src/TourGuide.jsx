@@ -9,11 +9,10 @@ const CITIES = [
     dates: "20 May – 8 Jun 2026",
     timezone: "BST (UTC+1) — 9 hours behind AEST",
     currency: "British Pound (GBP £). Contactless payment accepted almost everywhere — tap your card or phone. ATMs widely available.",
-    tipping: "Not mandatory. 10–12.5% in restaurants if service charge not included. No tipping in pubs, cafés, or taxis unless you want to round up.",
+    tipping: "Not mandatory. 10–12.5% in restaurants if service charge not included. No need to tip in pubs or cafés unless you want to round up.",
     weather: "Late May / early June: 14–20°C during the day, cooler at night. Rain is always possible — bring a light waterproof jacket. Daylight until ~9pm.",
     plugType: "Type G (three rectangular pins). You will need a travel adaptor — Australian plugs won't fit. Buy one at any supermarket or Boots.",
     voltage: "230V / 50Hz — same as Australia. No voltage converter needed, just the adaptor.",
-    rideApp: "Uber",
     emergency: { police: "999", ambulance: "999", fire: "999", nonEmergency: "111 (NHS non-emergency medical advice, 24/7)" },
     embassy: { name: "Australian High Commission", address: "Australia House, Strand, London WC2B 4LA", phone: "+44 20 7379 4334", note: "Open Mon–Fri. Nearest Tube: Temple or Holborn." },
     pharmacy: "Boots pharmacies are everywhere — look for the blue logo. Several are open late, including Boots Piccadilly Circus (open until 9pm most days).",
@@ -47,6 +46,8 @@ const CITIES = [
     venues: [
       {
         name: "The London Palladium",
+        image: "/images/london_palladium.png",
+        imageCaption: "The London Palladium — stage door entrance on Great Marlborough Street",
         dates: "Sat 23 May (bump in) – Sat 30 May",
         mainAddress: "8 Argyll Street, Soho, London W1F 7TF",
         stageAddress: "Great Marlborough Street (off Argyll Street)",
@@ -66,6 +67,8 @@ const CITIES = [
       },
       {
         name: "Sadler's Wells Theatre",
+        image: "/images/sadlers_wells.png",
+        imageCaption: "Sadler's Wells — Lilian Baylis Stage Door & Café on Arlington Way",
         dates: "Tue 2 Jun (bump in) – Sun 7 Jun",
         mainAddress: "Rosebery Avenue, London EC1R 4TN",
         stageAddress: "Arlington Way, London EC1R 4TN",
@@ -102,7 +105,6 @@ const CITIES = [
     weather: "Early June: 10–17°C. Can be windy. Layers are essential — the weather can change several times in a day.",
     plugType: "Type G — same as London. Your UK adaptor will work here.",
     voltage: "230V / 50Hz — same as Australia.",
-    rideApp: "Uber",
     emergency: { police: "999", ambulance: "999", fire: "999", nonEmergency: "111" },
     embassy: { name: "Australian Honorary Consulate", address: "No permanent consulate — nearest full services at Australian High Commission in London.", phone: "+44 20 7379 4334 (London)", note: "For emergencies: 24-hour Consular Emergency Centre +61 2 6261 3305." },
     pharmacy: "Boots on Princes Street. Independent pharmacies on Nicolson Street near the venue.",
@@ -116,18 +118,19 @@ const CITIES = [
       tips: ["Single bus fare is £2.00 — exact change or contactless only", "The city centre is hilly — wear comfortable shoes", "Waverley Station is the main train station, right in the centre", "Most things you'll need are within walking distance"]
     },
     accommodation: [
-      { name: "Travelodge Edinburgh Central", address: "33 St Mary's Street, Edinburgh EH1 1TA", nearestTransport: "Edinburgh Waverley station — 10-min walk. Bus stops on South Bridge / Nicolson Street — 5-min walk.", notes: "In the Old Town, close to the Royal Mile. ~15-min walk to Festival Theatre." },
-      { name: "Travelodge Edinburgh Central Queen Street", address: "30–31 Queen Street, Edinburgh EH2 1JX", nearestTransport: "Edinburgh Waverley station — 10-min walk. St Andrew Square tram stop — 5-min walk.", notes: "In the New Town. ~31-min walk to Festival Theatre via Waverley." }
+      { name: "Travelodge Edinburgh Central", address: "33 St Mary's Street, Edinburgh EH1 1TA", nearestTransport: "Edinburgh Waverley station — 10-min walk. Bus stops on South Bridge / Nicolson Street — 5-min walk.", notes: "In the Old Town, close to the Royal Mile. ~15-min walk to Festival Theatre." }
     ],
     venues: [
       {
         name: "Festival Theatre Edinburgh",
+        image: "/images/edinburgh_festival_theatre.png",
+        imageCaption: "Festival Theatre Edinburgh — main entrance on Nicolson Street",
         dates: "Thu 11 Jun (bump in) – Sat 13 Jun",
         mainAddress: "13–29 Nicolson Street, Edinburgh EH8 9FT",
         stageAddress: "Same address — stage door at Nicolson Street",
         nearestTransport: "Lothian bus stops on Nicolson Street directly outside the venue. Edinburgh Waverley — 15-min walk north.",
-        fromHotel: "~15 min walk from St Mary's St. ~31 min walk from Queen St.",
-        directions: "From Queen St: south through Princes St Gardens or via Waverley Bridge, continue through Old Town and down Nicolson Street.",
+        fromHotel: "~15-minute walk from the Travelodge.",
+        directions: "Head south-west along the Cowgate from St Mary's Street, then turn onto Nicolson Street. The Festival Theatre is on the right.",
         coffee: [
           { name: "Not Just Coffee", rating: "4.6", reviews: 146, address: "33 W Nicolson St, EH8 9DB", note: "Steps from the venue — great brownies and chai latte.", hours: "Mon–Sat 8:30am–5:30pm, Sun 9:30am–5:30pm" },
           { name: "Guajira Café & Coffee", rating: "4.9", reviews: 669, address: "18 St Mary's St, EH1 1SU", note: "Near St Mary's Travelodge — Colombian-inspired, fantastic brunch.", hours: "Tue–Sun 9:30am–5pm, closed Mon" }
@@ -153,11 +156,10 @@ const CITIES = [
     dates: "29 Jun – 12 Jul 2026",
     timezone: "PDT (UTC−7) — 17 hours behind AEST",
     currency: "US Dollar (USD $). Cards accepted almost everywhere. Carry a small amount of cash for tips.",
-    tipping: "Expected and important. 18–20% at sit-down restaurants. $1–2 per drink at bars. Tip rideshare drivers 15–20%. Not tipping is considered very rude.",
+    tipping: "Expected and important. 18–20% at sit-down restaurants. $1–2 per drink at bars. Not tipping is considered very rude.",
     weather: "San Francisco in July is NOT like the rest of California. Expect 13–20°C, heavy morning fog, and wind. Bring layers and a warm jacket.",
     plugType: "Type A/B (two flat parallel pins). You WILL need a different adaptor from the UK one. Buy at any Target, Walgreens, or airport shop.",
     voltage: "120V / 60Hz — DIFFERENT from Australia. Phone/laptop chargers are usually fine (check the small print). Hair dryers and straighteners designed for 230V may NOT work — check before plugging in.",
-    rideApp: "Uber/Lyft",
     emergency: { police: "911", ambulance: "911", fire: "911", nonEmergency: "311 (city services)" },
     embassy: { name: "Australian Consulate-General", address: "575 Market Street, Suite 1800, San Francisco, CA 94105", phone: "+1 415 644 3620", note: "Open Mon–Fri. ~15-min walk from hotel. After-hours: +61 2 6261 3305." },
     pharmacy: "Walgreens and CVS are the main chains. Walgreens at 135 Powell Street is close to the hotel.",
@@ -167,13 +169,12 @@ const CITIES = [
     ],
     transport: {
       overview: "BART is the subway/metro (connects to the airport). Muni covers buses and light rail within the city. Cable cars are fun but more tourist than transport.",
-      apps: "Google Maps, Citymapper, Uber/Lyft",
+      apps: "Google Maps, Citymapper",
       tips: [
         "Get a Clipper card for BART and Muni — buy at any BART station or Walgreens",
         "Muni fare is $2.50 per ride (free transfers within 2 hours)",
         "BART from SFO airport to downtown is ~$10, about 30 minutes",
         "Stay aware of your surroundings, especially at night — stick to well-lit main streets and travel in groups where possible",
-        "Uber/Lyft are widely used and often cheaper than taxis",
         "The hills are real — much hillier than it looks on a map"
       ]
     },
@@ -190,6 +191,8 @@ const CITIES = [
     venues: [
       {
         name: "Orpheum Theatre",
+        image: "/images/orpheum_theatre.png",
+        imageCaption: "Orpheum Theatre — stage door on Grove Street",
         dates: "Tue 30 Jun (bump in) – Sun 12 Jul",
         mainAddress: "1192 Market Street, San Francisco, CA 94102",
         stageAddress: "Stage door on Grove Street (side of building)",
@@ -230,7 +233,6 @@ const CITIES = [
     weather: "Hot and humid. July: 25–32°C, humidity 80%+. Sudden tropical downpours most afternoons — they pass quickly. Stay hydrated. A/C is aggressive indoors — a light layer can be useful inside.",
     plugType: "Type G (three rectangular pins) — same as the UK. Your UK adaptor will work.",
     voltage: "230V / 50Hz — same as Australia. No issues.",
-    rideApp: "Grab",
     emergency: { police: "999", ambulance: "995", fire: "995", nonEmergency: "1777 (non-emergency ambulance)" },
     embassy: { name: "Australian High Commission", address: "25 Napier Road, Singapore 258507", phone: "+65 6836 4100", note: "Open Mon–Fri. After-hours: +61 2 6261 3305." },
     pharmacy: "Guardian and Watsons — in most malls and MRT stations.",
@@ -240,18 +242,17 @@ const CITIES = [
       { date: "Tue 21 Jul", label: "Travel — Singapore → Perth", detail: "Travel day. Flight details TBC." }
     ],
     transport: {
-      overview: "Singapore's MRT is fast, clean, air-conditioned, and covers almost the entire island. Taxis and Grab (the local Uber) are affordable.",
-      apps: "Google Maps, Citymapper, Grab (essential — install before you arrive)",
+      overview: "Singapore's MRT is fast, clean, air-conditioned, and covers almost the entire island. Buses fill in the gaps. Public transport is safe and reliable.",
+      apps: "Google Maps, Citymapper",
       tips: [
         "EZ-Link or SimplyGo card at any MRT station (~$5 + top-up). Or tap your bank card.",
         "MRT fares: typically $1–3 per trip. Trains run ~5:30am to midnight.",
-        "Grab is the go-to rideshare app",
         "Esplanade MRT station (Circle Line) is directly connected to the venue",
         "Chewing gum is illegal to sell (you won't be arrested for having it, but don't litter)"
       ]
     },
     accommodation: [
-      { name: "To Be Confirmed", address: "Details will be provided closer to the Singapore dates.", nearestTransport: "TBC.", notes: "Check with Jen (Company Manager) for updates." }
+      { name: "Holiday Inn Express Singapore Clarke Quay", address: "2 Magazine Road, Singapore 059573", phone: "+65 6589 8000", nearestTransport: "Clarke Quay MRT station (North East line) — 7-min walk. Fort Canning MRT station (Downtown line) — 7-min walk.", notes: "Rooftop pool with city views, free breakfast included, self-service laundry, 24-hour fitness centre. Near Clarke Quay dining and nightlife, and a short walk to Chinatown." }
     ],
     venues: [
       {
@@ -260,8 +261,8 @@ const CITIES = [
         mainAddress: "1 Esplanade Drive, Singapore 038981",
         stageAddress: "Loading dock and stage door via Esplanade Drive",
         nearestTransport: "Esplanade MRT (Circle Line, Exit A) — 2-min walk, directly connected. City Hall MRT (East-West & North-South lines) — 5-min walk via underground link.",
-        fromHotel: "TBC once accommodation is confirmed",
-        directions: "Esplanade MRT (Circle Line, Exit A) is directly connected. Short MRT ride or taxi from most central hotels.",
+        fromHotel: "~2.5km / ~10 min by MRT (Clarke Quay → Dhoby Ghaut → Esplanade).",
+        directions: "MRT: Clarke Quay station (North East line) → Dhoby Ghaut → transfer to Circle line → Esplanade station (Exit A, directly connected to venue).",
         coffee: [
           { name: "Muro Coffee Esplanade", rating: "4.6", reviews: 70, address: "8 Raffles Ave, #01-13E Annexe", note: "In the Esplanade complex — homemade strawberry matcha is a standout. Closed Wednesdays.", hours: "Mon–Tue, Thu 9am–6pm, Fri–Sun 10am–8pm" },
           { name: "Blue Label Coffee", rating: "4.5", reviews: 111, address: "90 Bras Basah Rd, #B1-24", note: "Esplanade Xchange — specialty coffee and good food.", hours: "Mon–Fri 7:30am–5:30pm, Sat–Sun 9am–7pm" },
@@ -285,10 +286,10 @@ const CITIES = [
 ];
 
 const CONTACTS = [
-  { role: "Company Manager", name: "Jennifer Burke", phone: "+61 404 004 170", email: "contact@bigliveco.com" },
-  { role: "Executive Director", name: "Khalid Tarabay", phone: "+61 410 315 410", email: "contact@bigliveco.com" },
-  { role: "Artistic Director", name: "Joel Burke", phone: "+61 414 704 460", email: "contact@bigliveco.com" },
-  { role: "Production Manager", name: "Locky Young", phone: "+61 413 352 139", email: "contact@bigliveco.com" },
+  { role: "Company Manager", name: "Jennifer Burke", phone: "+61 404 004 170" },
+  { role: "Executive Director", name: "Khalid Tarabay", phone: "+61 410 315 410" },
+  { role: "Artistic Director", name: "Joel Burke", phone: "+61 414 704 460" },
+  { role: "Production Manager", name: "Locky Young", phone: "+61 413 352 139" },
 ];
 
 const Chev = ({ open }) => (
@@ -357,7 +358,6 @@ export default function TourGuide() {
               <div><div style={{ fontSize: "14px", fontWeight: 500, color: "#e8e0d8" }}>{c.name}</div><div style={{ fontSize: "12px", color: "#777", marginTop: "2px" }}>{c.role}</div></div>
               <div style={{ textAlign: "right" }}>
                 <a href={`tel:${c.phone}`} style={{ fontSize: "13px", color: "#e8e0d8", textDecoration: "none", fontWeight: 500, display: "block" }}>{c.phone}</a>
-                <a href={`mailto:${c.email}`} style={{ fontSize: "11px", color: "#8A0B0B", textDecoration: "none", marginTop: "2px", display: "block" }}>{c.email}</a>
               </div>
             </div>
           ))}
@@ -404,9 +404,47 @@ export default function TourGuide() {
         <div style={{ background: "rgba(138,11,11,0.06)", borderRadius: "8px", padding: "12px 14px", marginBottom: "20px", border: "1px solid rgba(138,11,11,0.12)", display: "flex", gap: "10px", alignItems: "flex-start" }}>
           <span style={{ fontSize: "16px", flexShrink: 0 }}>🚕</span>
           <div style={{ fontSize: "13px", color: "#ccc", lineHeight: 1.5 }}>
-            <strong style={{ color: "#e05050" }}>After dark:</strong> Use {city.rideApp} or a licensed taxi for late-night travel. If taking public transport at night, travel in groups — never alone.
+            <strong style={{ color: "#e05050" }}>After dark:</strong> Please ensure you travel in groups to stay safe on public transport. Avoid walking alone at night — stick to well-lit main streets and keep your phone charged.
           </div>
         </div>
+
+        {/* Before You Travel - show on London only since it's the first city */}
+        {city.id === "london" && (
+          <Section icon="📋" title="Before You Travel" defaultOpen={false}>
+            <div style={{ fontSize: "12px", color: "#8A0B0B", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600, marginBottom: "8px" }}>Money & Banking</div>
+            {[
+              "Notify your bank and credit card provider that you'll be travelling to the UK, USA, and Singapore — otherwise your card may be blocked for suspicious overseas activity.",
+              "Consider getting a prepaid travel card (e.g. Wise, Revolut) for better exchange rates and lower international transaction fees. You can load multiple currencies and top up as you go.",
+              "Check whether your Australian bank charges international transaction fees — many cards add 2–3% on every overseas purchase. A travel card avoids this.",
+              "Carry a small amount of local currency in cash for each destination. You don't need much — most places accept contactless — but it's useful for markets, tips (in the US), and emergencies."
+            ].map((t, i) => (
+              <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "8px", fontSize: "13px", lineHeight: 1.6 }}>
+                <span style={{ color: "#8A0B0B", flexShrink: 0 }}>›</span><span>{t}</span>
+              </div>
+            ))}
+            <div style={{ fontSize: "12px", color: "#8A0B0B", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600, marginBottom: "8px", marginTop: "16px" }}>Documents & Essentials</div>
+            {[
+              "Check your passport is valid for at least 6 months beyond your return date.",
+              "Save photos of your passport, travel insurance policy, and flight itinerary to your phone (and email them to yourself as backup).",
+              "Bring any prescription medication in its original pharmacy-labelled packaging with your name on it. Singapore has very strict drug laws — check that your medication is permitted before you travel.",
+              "Pack both a UK adaptor (Type G — works in the UK and Singapore) and a US adaptor (Type A/B). Most phone and laptop chargers handle both 120V and 230V, but hair dryers and straighteners may not work on US 120V — check the label."
+            ].map((t, i) => (
+              <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "8px", fontSize: "13px", lineHeight: 1.6 }}>
+                <span style={{ color: "#8A0B0B", flexShrink: 0 }}>›</span><span>{t}</span>
+              </div>
+            ))}
+            <div style={{ fontSize: "12px", color: "#8A0B0B", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600, marginBottom: "8px", marginTop: "16px" }}>Phone & Connectivity</div>
+            {[
+              "Download offline maps for London, Edinburgh, San Francisco, and Singapore in Google Maps before you leave — works without data.",
+              "Install key apps: Citymapper (London, SF, Singapore), WhatsApp (for group comms and calls home), and Google Maps with offline maps downloaded.",
+              "Check if your Australian mobile plan has an international roaming add-on. If not, plan to buy a local SIM in each country — see the 'SIM Card' info in each city's Essentials section."
+            ].map((t, i) => (
+              <div key={i} style={{ display: "flex", gap: "8px", marginBottom: "8px", fontSize: "13px", lineHeight: 1.6 }}>
+                <span style={{ color: "#8A0B0B", flexShrink: 0 }}>›</span><span>{t}</span>
+              </div>
+            ))}
+          </Section>
+        )}
 
         {/* Travel */}
         <Section icon="✈️" title="Travel" defaultOpen={true}>
@@ -465,6 +503,12 @@ export default function TourGuide() {
           {city.venues.map((v, i) => (
             <div key={i} style={{ marginBottom: i < city.venues.length - 1 ? "20px" : 0 }}>
               <div style={{ fontWeight: 600, color: "#e8e0d8", fontSize: "15px", marginBottom: "8px" }}>{v.name}</div>
+              {v.image && (
+                <div style={{ marginBottom: "12px", borderRadius: "8px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.08)" }}>
+                  <img src={v.image} alt={v.imageCaption} style={{ width: "100%", display: "block" }} />
+                  <div style={{ fontSize: "11px", color: "#777", padding: "8px 12px", background: "rgba(255,255,255,0.03)" }}>{v.imageCaption}</div>
+                </div>
+              )}
               <IC label="Main Entrance" value={v.mainAddress} />
               <IC label="Stage Door" value={v.stageAddress} />
               <IC label="Nearest Public Transport" value={v.nearestTransport} />
@@ -496,7 +540,7 @@ export default function TourGuide() {
           </div>
           <div style={{ marginTop: "14px", padding: "12px 14px", background: "rgba(138,11,11,0.06)", borderRadius: "8px", border: "1px solid rgba(138,11,11,0.12)" }}>
             <div style={{ fontSize: "13px", color: "#ccc", lineHeight: 1.6 }}>
-              <strong style={{ color: "#e05050" }}>Late-night travel:</strong> If travelling after performances or on nights out, please use {city.rideApp} or a licensed taxi rather than walking or taking public transport alone. If public transport is your only option, travel in groups — never alone. Keep your phone charged and share your live location with a friend.
+              <strong style={{ color: "#e05050" }}>Late-night travel:</strong> If travelling after performances or on nights out, please travel in groups to stay safe. Avoid walking alone — stick to well-lit main streets, keep your phone charged, and share your live location with a friend.
             </div>
           </div>
         </Section>
