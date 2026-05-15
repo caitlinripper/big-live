@@ -40,7 +40,8 @@ const CITIES = [
         checkIn: "Tue 20 May",
         checkOut: "Tue 9 Jun",
         nearestTransport: "Bond Street station (Jubilee, Central, Elizabeth lines) — 3-min walk. Oxford Circus station (Victoria, Bakerloo, Central lines) — 5-min walk.",
-        notes: "In Mayfair — very central. Plenty of shops, cafés, and restaurants within a few minutes' walk."
+        notes: "In Mayfair — very central. Plenty of shops, cafés, and restaurants within a few minutes' walk.",
+        laundry: { name: "Posh Wash Launderette", rating: "4.6", reviews: 176, address: "3 Chester Court, Albany St, NW1 4BU", note: "Self-service launderette with friendly staff. ~15-min walk north (near Regent's Park). Wash + dry ~£10. Cash only for self-service.", hours: "Mon–Fri 9am–7pm, Sat 9am–7pm, Sun 10am–5pm" }
       }
     ],
     venues: [
@@ -118,7 +119,8 @@ const CITIES = [
       tips: ["Single bus fare is £2.00 — exact change or contactless only", "The city centre is hilly — wear comfortable shoes", "Waverley Station is the main train station, right in the centre", "Most things you'll need are within walking distance"]
     },
     accommodation: [
-      { name: "Travelodge Edinburgh Central", address: "33 St Mary's Street, Edinburgh EH1 1TA", nearestTransport: "Edinburgh Waverley station — 10-min walk. Bus stops on South Bridge / Nicolson Street — 5-min walk.", notes: "In the Old Town, close to the Royal Mile. ~15-min walk to Festival Theatre." }
+      { name: "Travelodge Edinburgh Central", address: "33 St Mary's Street, Edinburgh EH1 1TA", nearestTransport: "Edinburgh Waverley station — 10-min walk. Bus stops on South Bridge / Nicolson Street — 5-min walk.", notes: "In the Old Town, close to the Royal Mile. ~15-min walk to Festival Theatre.",
+        laundry: { name: "Whisky Laundromat", rating: "4.9", reviews: 115, address: "7 Jeffrey St, EH1 1DR", note: "5-min walk from the hotel, near the Royal Mile. Drop-off wash, dry and fold service — ~£30 per basket, ready in 2–3 hours. Friendly owner.", hours: "Mon–Fri 8am–8pm, Sat–Sun 8am–10pm" } }
     ],
     venues: [
       {
@@ -185,7 +187,8 @@ const CITIES = [
         phone: "+1 415-421-7500",
         checkIn: "Mon 29 Jun", checkOut: "Mon 13 Jul",
         nearestTransport: "Powell Street BART/Muni station — 5-min walk (connects to airport and city-wide). Multiple Muni bus stops on Market Street.",
-        notes: "Downtown near Union Square. As with any city centre, be cautious — keep valuables out of sight, stay on well-lit main streets at night, and travel in groups where possible."
+        notes: "Downtown near Union Square. As with any city centre, be cautious — keep valuables out of sight, stay on well-lit main streets at night, and travel in groups where possible.",
+        laundry: { name: "The TL Laundromat & Wash and Fold", rating: "4.4", reviews: 371, address: "517 O'Farrell St, CA 94102", note: "~10-min walk from hotel. Wash and fold drop-off service with same-day turnaround. Pick-up and delivery also available — contact via their website.", hours: "Daily 9:15am–7pm" }
       }
     ],
     venues: [
@@ -252,7 +255,8 @@ const CITIES = [
       ]
     },
     accommodation: [
-      { name: "Holiday Inn Express Singapore Clarke Quay", address: "2 Magazine Road, Singapore 059573", phone: "+65 6589 8000", nearestTransport: "Clarke Quay MRT station (North East line) — 7-min walk. Fort Canning MRT station (Downtown line) — 7-min walk.", notes: "Rooftop pool with city views, free breakfast included, self-service laundry, 24-hour fitness centre. Near Clarke Quay dining and nightlife, and a short walk to Chinatown." }
+      { name: "Holiday Inn Express Singapore Clarke Quay", address: "2 Magazine Road, Singapore 059573", phone: "+65 6589 8000", nearestTransport: "Clarke Quay MRT station (North East line) — 7-min walk. Fort Canning MRT station (Downtown line) — 7-min walk.", notes: "Rooftop pool with city views, free breakfast included, self-service laundry, 24-hour fitness centre. Near Clarke Quay dining and nightlife, and a short walk to Chinatown.",
+        laundry: { name: "LaundryBear", rating: "4.8", reviews: 121, address: "43 Hongkong St, #01-01, Singapore 059682", note: "5-min walk from the hotel. 24-hour self-service — detergent included in the machines. Wash ~$7 SGD, dry ~$5 SGD. Coin-operated (change machine on-site). Very clean.", hours: "Open 24 hours, every day" } }
     ],
     venues: [
       {
@@ -435,6 +439,7 @@ export default function TourGuide() {
             ))}
             <div style={{ fontSize: "12px", color: "#8A0B0B", textTransform: "uppercase", letterSpacing: "1px", fontWeight: 600, marginBottom: "8px", marginTop: "16px" }}>Phone & Connectivity</div>
             {[
+              "Download the United Airlines app to track your flights and access boarding passes: apps.apple.com/au/app/united-airlines/id449945214",
               "Download offline maps for London, Edinburgh, San Francisco, and Singapore in Google Maps before you leave — works without data.",
               "Install key apps: Citymapper (London, SF, Singapore), WhatsApp (for group comms and calls home), and Google Maps with offline maps downloaded.",
               "Check if your Australian mobile plan has an international roaming add-on. If not, plan to buy a local SIM in each country — see the 'SIM Card' info in each city's Essentials section."
@@ -495,6 +500,17 @@ export default function TourGuide() {
               {a.checkIn && <IC label="Check-in / Check-out" value={`${a.checkIn} → ${a.checkOut}`} />}
               <IC label="Nearest Public Transport" value={a.nearestTransport} />
               {a.notes && <div style={{ fontSize: "13px", color: "#999", marginTop: "8px", lineHeight: 1.6, fontStyle: "italic" }}>💡 {a.notes}</div>}
+                  {a.laundry && (
+                    <div style={{ marginTop: "12px", background: "rgba(60,60,90,0.08)", borderRadius: "8px", padding: "12px 14px", border: "1px solid rgba(120,120,180,0.12)" }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "4px" }}>
+                        <span style={{ fontWeight: 600, color: "#e8e0d8", fontSize: "13px" }}>🧺 {a.laundry.name}</span>
+                        <span style={{ fontSize: "12px", color: "#8899cc", fontWeight: 600, whiteSpace: "nowrap", marginLeft: "8px" }}>★ {a.laundry.rating} ({a.laundry.reviews})</span>
+                      </div>
+                      <div style={{ fontSize: "12px", color: "#999", marginBottom: "3px" }}>{a.laundry.address}</div>
+                      <div style={{ fontSize: "13px", color: "#bbb", marginBottom: "3px" }}>{a.laundry.note}</div>
+                      <div style={{ fontSize: "11px", color: "#777" }}>{a.laundry.hours}</div>
+                    </div>
+                  )}
             </div>
           ))}
         </Section>
