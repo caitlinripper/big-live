@@ -372,6 +372,18 @@ export default function TourGuide() {
         </div>
       )}
 
+      {/* United Airlines App Banner */}
+      <a href="https://apps.apple.com/au/app/united-airlines/id449945214" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", gap: "12px", padding: "14px 20px", background: "linear-gradient(135deg, #00205B 0%, #003087 100%)", textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+        <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: "#002c6e", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, border: "1px solid rgba(255,255,255,0.15)" }}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 12L12 4L21 12M12 4V20" stroke="#60a0ff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" opacity="0.3"/><path d="M2 14L8.5 8.5L13 11L22 4" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M16 4H22V10" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontSize: "14px", fontWeight: 600, color: "#fff" }}>Download the United Airlines App</div>
+          <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.6)", marginTop: "2px" }}>Track your flights and access your boarding passes</div>
+        </div>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style={{ flexShrink: 0 }}><path d="M7 4L13 10L7 16" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+      </a>
+
       {/* City Selector */}
       <div style={{ display: "flex", gap: 0, borderBottom: "1px solid rgba(255,255,255,0.06)", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
         {CITIES.map(c => (
