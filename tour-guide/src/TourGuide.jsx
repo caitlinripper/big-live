@@ -18,8 +18,9 @@ const CITIES = [
     pharmacy: "Boots pharmacies are everywhere — look for the blue logo. Several are open late, including Boots Piccadilly Circus (open until 9pm most days).",
     sim: "Buy a UK SIM at any Tesco, Sainsbury's, or phone shop. Vodafone, Three, and EE all have pay-as-you-go options from ~£10. Alternatively, check if your Australian carrier has a roaming add-on. Free Wi-Fi in most cafés.",
     travel: [
-      { date: "Mon 19 – Tue 20 May", label: "Travel to London", detail: "Potential travel days — individual flights. Check your itinerary for your specific departure date, airline, and terminal. Allow time for check-in, transit, and jet lag on arrival." },
-      { date: "Tue 20 May", label: "Arrival & Check-In", detail: "Check into Mermaid Suites Hotel, 3–4 Blenheim Street, London W1S 1LA." }
+      { date: "Tue 19 May (Path 1) / Wed 20 May (Path 2+)", label: "Depart Brisbane", detail: "Path 1 departs BNE Tue 19 May 10:30am on UA97 via San Francisco. Paths 2, 3, 4 and 5 depart BNE Wed 20 May 10:30am on the same routing. Check your itinerary for your specific path, terminal, and seat." },
+      { date: "Wed 20 May", label: "Path 1 Arrival & Check-In", detail: "Path 1 lands at London Heathrow 7:25am on UA901 (via SFO). Travel into central London and check into Mermaid Suites Hotel, 3–4 Blenheim Street, London W1S 1LA from 3:00pm (luggage drop-off available earlier)." },
+      { date: "Thu 21 May", label: "Path 2+ Arrival & Check-In", detail: "The remainder of the company lands at London Heathrow 7:25am on UA901 (via SFO) — this is the bulk arrival. Travel into central London and check into Mermaid Suites Hotel. Rooms held from 3:00pm but luggage drop-off available earlier." }
     ],
     transport: {
       overview: "London's public transport is excellent. The Tube (Underground), buses, and Overground all accept contactless payment — just tap your Australian bank card or phone at the barriers. No need to buy an Oyster card unless you prefer one.",
@@ -37,7 +38,7 @@ const CITIES = [
         address: "3–4 Blenheim Street, London W1S 1LA",
         phone: "+44 (0)20 7629 1875",
         email: "info@mermaidsuite.com",
-        checkIn: "Tue 20 May",
+        checkIn: "Wed 20 May",
         checkOut: "Tue 9 Jun",
         nearestTransport: "Bond Street station (Jubilee, Central, Elizabeth lines) — 3-min walk. Oxford Circus station (Victoria, Bakerloo, Central lines) — 5-min walk.",
         notes: "In Mayfair — very central. Plenty of shops, cafés, and restaurants within a few minutes' walk.",
@@ -62,15 +63,15 @@ const CITIES = [
         performances: [
           { date: "Sun 24 May", time: "7:00pm" }, { date: "Mon 25 May", time: "Matinée + Evening" },
           { date: "Tue 26 May", time: "7:00pm" }, { date: "Wed 27 May", time: "Matinée + Evening" },
-          { date: "Thu 28 May", time: "7:00pm" }, { date: "Fri 29 May", time: "Matinée + Evening" },
-          { date: "Sat 30 May", time: "TBC + Bump Out" }
+          { date: "Thu 28 May", time: "Matinée + Evening" }, { date: "Fri 29 May", time: "Matinée + Evening" },
+          { date: "Sat 30 May", time: "Matinée + Evening + Bump Out" }
         ]
       },
       {
         name: "Sadler's Wells Theatre",
         image: "/images/sadlers_wells.png",
         imageCaption: "Sadler's Wells — Lilian Baylis Stage Door & Café on Arlington Way",
-        dates: "Tue 2 Jun (bump in) – Sun 7 Jun",
+        dates: "Mon 1 Jun (bump in) – Sun 7 Jun",
         mainAddress: "Rosebery Avenue, London EC1R 4TN",
         stageAddress: "Arlington Way, London EC1R 4TN",
         nearestTransport: "Angel station (Northern line) — 5-min walk. Buses 19, 38, 341 stop on Rosebery Avenue.",
@@ -81,13 +82,13 @@ const CITIES = [
           { name: "Rose & Rose", rating: "4.9", reviews: 89, address: "400 St John St, EC1V 4NJ", note: "Cosy neighbourhood café near Angel — great matcha and coffee.", hours: "Mon–Thu 7:15am–5:30pm, Fri to 3:30pm" }
         ],
         performances: [
-          { date: "Wed 3 Jun", time: "7:30pm" }, { date: "Thu 4 Jun", time: "7:30pm" },
+          { date: "Tue 2 Jun", time: "7:30pm" }, { date: "Wed 3 Jun", time: "7:30pm" }, { date: "Thu 4 Jun", time: "7:30pm" },
           { date: "Fri 5 Jun", time: "7:30pm" }, { date: "Sat 6 Jun", time: "2:30pm + 7:30pm" },
           { date: "Sun 7 Jun", time: "1:00pm + 6:00pm + Bump Out" }
         ]
       }
     ],
-    restDays: ["Sun 31 May – Mon 1 Jun", "Mon 8 Jun"],
+    restDays: ["Sun 31 May", "Mon 8 Jun"],
     thingsToDo: [
       { category: "Near the Hotel (Mayfair / Soho)", items: ["Walk through Soho and Carnaby Street — great for food, coffee, and people-watching", "Regent's Park — 15-min walk north, perfect for stretching out on a rest day", "Hyde Park / Kensington Gardens — 20-min walk west", "Liberty London (Great Marlborough St, near the Palladium) — iconic department store"] },
       { category: "Free & Low-Cost", items: ["British Museum — free entry, 20 min by Tube (Tottenham Court Road)", "National Gallery / Trafalgar Square — free entry", "Tate Modern — free entry, walk across the Millennium Bridge from St Paul's", "South Bank walk along the Thames — street performers, food stalls, views", "Sky Garden — free viewing gallery at 20 Fenchurch St (book online)"] },
@@ -99,7 +100,7 @@ const CITIES = [
     name: "Edinburgh",
     country: "United Kingdom",
     flag: "🇬🇧",
-    dates: "9 – 13 Jun 2026",
+    dates: "9 – 14 Jun 2026",
     timezone: "BST (UTC+1) — 9 hours behind AEST",
     currency: "British Pound (GBP £). Same as London. Scottish banknotes look different but are legal tender.",
     tipping: "Same as London. Not mandatory.",
@@ -127,7 +128,7 @@ const CITIES = [
         name: "Festival Theatre Edinburgh",
         image: "/images/edinburgh_festival_theatre.png",
         imageCaption: "Festival Theatre Edinburgh — main entrance on Nicolson Street",
-        dates: "Thu 11 Jun (bump in) – Sat 13 Jun",
+        dates: "Thu 11 Jun (bump in) – Sun 14 Jun",
         mainAddress: "13–29 Nicolson Street, Edinburgh EH8 9FT",
         stageAddress: "Same address — stage door at Nicolson Street",
         nearestTransport: "Lothian bus stops on Nicolson Street directly outside the venue. Edinburgh Waverley — 15-min walk north.",
@@ -139,7 +140,8 @@ const CITIES = [
         ],
         performances: [
           { date: "Fri 12 Jun", time: "7:30pm" },
-          { date: "Sat 13 Jun", time: "2:30pm + 7:00pm + Bump Out" }
+          { date: "Sat 13 Jun", time: "2:30pm + 7:30pm" },
+          { date: "Sun 14 Jun", time: "2:30pm + 7:30pm + Bump Out" }
         ]
       }
     ],
@@ -151,11 +153,64 @@ const CITIES = [
     ]
   },
   {
+    id: "londonrehearsal",
+    name: "London (Rehearsal)",
+    country: "United Kingdom",
+    flag: "🇬🇧",
+    dates: "26 Jun 2026",
+    timezone: "BST (UTC+1) — 9 hours behind AEST",
+    currency: "British Pound (GBP £). See the London section above for full details.",
+    tipping: "See the London section above.",
+    weather: "Late June in London: 16–22°C. Generally mild with a chance of rain. Daylight until ~9:30pm.",
+    plugType: "Type G — your UK adaptor still applies.",
+    voltage: "230V / 50Hz — same as Australia.",
+    emergency: { police: "999", ambulance: "999", fire: "999", nonEmergency: "111 (NHS non-emergency medical advice, 24/7)" },
+    embassy: { name: "Australian High Commission", address: "Australia House, Strand, London WC2B 4LA", phone: "+44 20 7379 4334", note: "Open Mon–Fri. Nearest Tube: Temple or Holborn." },
+    pharmacy: "Boots pharmacies are everywhere — see the London section above for details.",
+    sim: "If you kept your UK SIM from the London leg, it will continue to work.",
+    travel: [
+      { date: "By Fri 26 Jun", label: "Return to London", detail: "Everyone is required to be back in London by Friday 26 June for rehearsals. Travel between the Edinburgh bump-out (Sun 14 Jun) and the rehearsal day is individual — there is no formal company schedule during this window. Please allow a buffer in your plans to be in London with time to settle in before the call." }
+    ],
+    transport: {
+      overview: "See the London section above for full transport information. The same TfL contactless system applies — tap any contactless card or phone at any Tube, bus, Overground, or Elizabeth line gate.",
+      apps: "Citymapper (best for London), Google Maps, TfL Go",
+      tips: [
+        "Contactless fares are capped daily — you won't pay more than ~£8.10/day in Zones 1–2",
+        "If you held onto your Oyster card or contactless setup from May/June, it still works",
+        "Allow plenty of time to reach the rehearsal venue — central London traffic and Tube delays can easily add 20+ minutes"
+      ]
+    },
+    accommodation: [
+      { name: "Accommodation — TBC", address: "Details to follow", nearestTransport: "TBC", notes: "Accommodation arrangements for the rehearsal day are still being finalised. Further information will be circulated closer to the date." }
+    ],
+    venues: [
+      {
+        name: "Rehearsal Venue — TBC",
+        dates: "Fri 26 Jun",
+        mainAddress: "Venue address to be confirmed",
+        stageAddress: "TBC",
+        nearestTransport: "TBC",
+        fromHotel: "TBC",
+        directions: "Details will be circulated closer to the date.",
+        coffee: [
+          { name: "To Be Confirmed", rating: "—", reviews: 0, address: "Coffee spots near the rehearsal venue will be added once the venue is confirmed.", note: "", hours: "" }
+        ],
+        performances: [
+          { date: "Fri 26 Jun", time: "All-Day Rehearsal" }
+        ]
+      }
+    ],
+    restDays: [],
+    thingsToDo: [
+      { category: "Please Note", items: ["Friday 26 June is a full working day — please plan to be available all day for rehearsals.", "There is no formal company schedule between the Edinburgh bump-out (late Sun 14 Jun) and Friday 26 June — this window is personal time.", "Allow buffer in any personal travel plans so you are back in London with time to settle in before the call.", "Further details on venue, call time, and accommodation will follow from the company manager."] }
+    ]
+  },
+  {
     id: "sanfrancisco",
     name: "San Francisco",
     country: "United States",
     flag: "🇺🇸",
-    dates: "29 Jun – 12 Jul 2026",
+    dates: "28 Jun – 12 Jul 2026",
     timezone: "PDT (UTC−7) — 17 hours behind AEST",
     currency: "US Dollar (USD $). Cards accepted almost everywhere. Carry a small amount of cash for tips.",
     tipping: "Expected and important. 18–20% at sit-down restaurants. $1–2 per drink at bars. Not tipping is considered very rude.",
@@ -167,7 +222,7 @@ const CITIES = [
     pharmacy: "Walgreens and CVS are the main chains. Walgreens at 135 Powell Street is close to the hotel.",
     sim: "Buy a US prepaid SIM at any Target or phone shop. T-Mobile and Mint Mobile have affordable options. Or get an eSIM before you leave (Airalo or similar).",
     travel: [
-      { date: "TBC late Jun", label: "Travel to San Francisco", detail: "Flight details to be confirmed. Check into Mr Pickwick Hotel from 15:00 on Mon 29 Jun. Remember: you will need a US power adaptor (Type A/B) — different from the UK one." }
+      { date: "Sun 28 Jun", label: "Travel London → San Francisco", detail: "United flights LHR → SFO depart throughout the day — UA900 dep 10:35am / arr SFO 1:35pm, UA949 dep 1:00pm / arr SFO 4:00pm, UA939 dep 4:15pm / arr SFO 7:10pm. Check your itinerary for your specific flight. Check into Mr Pickwick Hotel on arrival. Remember: you will need a US power adaptor (Type A/B) — different from the UK one." }
     ],
     transport: {
       overview: "BART is the subway/metro (connects to the airport). Muni covers buses and light rail within the city. Cable cars are fun but more tourist than transport.",
@@ -185,7 +240,7 @@ const CITIES = [
         name: "Mr Pickwick Hotel",
         address: "85 Fifth Street, San Francisco, CA 94103",
         phone: "+1 415-421-7500",
-        checkIn: "Mon 29 Jun", checkOut: "Mon 13 Jul",
+        checkIn: "Sun 28 Jun", checkOut: "Mon 13 Jul",
         nearestTransport: "Powell Street BART/Muni station — 5-min walk (connects to airport and city-wide). Multiple Muni bus stops on Market Street.",
         notes: "Downtown near Union Square. As with any city centre, be cautious — keep valuables out of sight, stay on well-lit main streets at night, and travel in groups where possible.",
         laundry: { name: "The TL Laundromat & Wash and Fold", rating: "4.4", reviews: 371, address: "517 O'Farrell St, CA 94102", note: "~10-min walk from hotel. Wash and fold drop-off service with same-day turnaround. Pick-up and delivery also available — contact via their website.", hours: "Daily 9:15am–7pm" }
@@ -208,8 +263,7 @@ const CITIES = [
           { name: "Telescope Coffee", rating: "4.6", reviews: 283, address: "345 6th St, CA 94103", note: "Near the hotel — honeycomb latte is a favourite.", hours: "Mon–Fri 7am–4pm, Sat–Sun 7am–3pm" }
         ],
         performances: [
-          { date: "Thu 2 Jul", time: "7:00pm (TBC)" }, { date: "Fri 3 Jul", time: "7:00pm" },
-          { date: "Sat 4 Jul", time: "Mat + Eve (TBC) — US Independence Day" },
+          { date: "Fri 3 Jul", time: "7:00pm" },
           { date: "Sun 5 Jul", time: "1:00pm + 6:00pm" }, { date: "Tue 7 Jul", time: "7:00pm" },
           { date: "Wed 8 Jul", time: "7:00pm" }, { date: "Thu 9 Jul", time: "7:00pm" },
           { date: "Fri 10 Jul", time: "7:00pm" }, { date: "Sat 11 Jul", time: "1:00pm + 7:00pm" },
